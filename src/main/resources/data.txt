@@ -1,0 +1,10 @@
+hello spark
+hello flink
+hi kafka
+barber tailor
+copy get
+spark spark
+flink hadoop
+hello flink
+flink
+spark spark
