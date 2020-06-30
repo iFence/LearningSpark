@@ -1,4 +1,6 @@
 DEST_COUNTRY_NAME,ORIGIN_COUNTRY_NAME,count
+,,
+,jinan,9
 United States,Romania,1
 United States,Ireland,264
 United States,India,69
@@ -254,3 +256,5 @@ United States,Haiti,226
 United States,Uganda,1
 "Bonaire, Sint Eustatius, and Saba",United States,16
 Greece,United States,50
+shanghai,,10
+,beijing,

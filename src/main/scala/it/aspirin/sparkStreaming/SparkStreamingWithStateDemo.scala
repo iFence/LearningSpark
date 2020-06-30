@@ -23,7 +23,7 @@ object SparkStreamingWithStateDemo {
   }
 
   def addSocketSource(ssc: StreamingContext): InputDStream[String] = {
-    ssc.socketTextStream("localhost", 9999)
+    ssc.socketTextStream("localhost", 9998)
   }
 
   /**
