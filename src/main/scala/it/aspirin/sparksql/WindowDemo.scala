@@ -4,7 +4,6 @@ import org.apache.spark.sql.expressions.Window
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions._
 
-import scala.sys.process.ProcessBuilder.Source
 
 object WindowDemo {
   def main(args: Array[String]): Unit = {
@@ -13,9 +12,12 @@ object WindowDemo {
     val csvSource = addCsvSource(spark)
     //    doWindowTrans(csvSource)
     //    doGroupSetTrans(spark, csvSource)
-//    doPivot(spark, csvSource)
-    val resDF = doReadMode(spark, csvSource)
-    addCsvSink(resDF)
+    //    doPivot(spark, csvSource)
+    //    val resDF = doReadMode(spark, csvSource)
+    //    addCsvSink(resDF)
+//    val jsonDF = addJSONSource(spark)
+//    doJsonTrans(jsonDF)
+
     val end = System.currentTimeMillis()
     println(s"total time: ${end - start}")
   }
@@ -30,6 +32,12 @@ object WindowDemo {
       .csv("/Users/yulei/IdeaProjects/personal/LearningSpark/src/main/resources/data/flight-data/groupset.csv")
 
     //      .csv("/Users/yulei/IdeaProjects/personal/LearningSpark/src/main/resources/data/retail-data/all/online-retail-dataset.csv")
+  }
+
+  def addJSONSource(spark: SparkSession) = {
+    spark.read.format("json")
+      .option("allowSingleQuotes", "false")
+      .load("/Users/yulei/IdeaProjects/personal/LearningSpark/src/main/resources/json.txt")
   }
 
   def addCsvSink(sinkDF: DataFrame): Unit = {
@@ -90,7 +98,11 @@ object WindowDemo {
       .show()
   }
 
-  def doReadMode(spark: SparkSession, source:DataFrame) = {
+  def doReadMode(spark: SparkSession, source: DataFrame) = {
     source
+  }
+
+  def doJsonTrans(jsonDF: DataFrame) = {
+    jsonDF.show(false)
   }
 }
