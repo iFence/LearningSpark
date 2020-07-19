@@ -9,8 +9,8 @@ object PivotDemo {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder().appName("pivot").master("local[*]").getOrCreate()
     val df = addCsvSource(spark)
-    //    doPivot(spark)
-    doTransDoubleStream(df)
+        doPivot(spark)
+//    doTransDoubleStream(df)
   }
 
   def addCsvSource(spark:SparkSession): DataFrame = {

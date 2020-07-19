@@ -7,5 +7,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/data/flight-data/jdbc/my-sqlite.db</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="test@localhost" uuid="b9fdea24-83cd-4137-856d-c00644a2f7b9">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/test</jdbc-url>
+    </data-source>
   </component>
 </project>
